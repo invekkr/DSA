@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int n=123;
+    int n=565;
     int lastDig,rev=0;
     
     while(n!=0){
