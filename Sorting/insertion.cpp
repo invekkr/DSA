@@ -1,19 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
-void bubble(vector<int> &arr,int n){
-    bool swapped;
-    for(int i=0;i<n-1;i++){
-        swapped = false;
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                swap(arr[j],arr[j+1]);
-                swapped = true;
-            }
-            if(!swapped)    break;
+void insertion(vector<int> &arr,int n){
+    
+    for(int i=0;i<n;i++){
+        int j = i;
+        while(j>0 && arr[j-1]>arr[j]){
+            swap(arr[j-1],arr[j]);
+            j--;
         }
         for(int i=0;i<n;i++){
             cout<<arr[i]<<" ";
-        } cout<<endl;
+        }
+        cout<<endl;
     }
 
 }
@@ -25,7 +23,7 @@ int main(){
     }
     cout<<endl;
 
-    bubble(arr,n);
+    insertion(arr,n);
     cout<<endl;
 
     for(int i=0;i<n;i++){
