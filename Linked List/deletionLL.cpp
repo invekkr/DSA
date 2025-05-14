@@ -13,18 +13,54 @@ class Node{
 void printLL(Node* head){
     Node* temp = head;
     while(temp){
-        cout<<temp->data;
+        cout<<temp->data<<" ";
         temp = temp->next;
     }
     cout<<endl;
 }
 
-void deleteHead(Node* &head){
-     if (!head) return;
+Node* deleteHead(Node* &head){
+     if (!head) return NULL;
     Node* temp = head;
     head = temp->next;
     delete temp;
+
+    return head;
     
+}
+
+void deleteTail(Node* &head){
+    if(head==NULL || head->next==NULL)  delete head ;
+    Node* temp = head;
+    Node* prev = NULL;
+    while(temp->next->next!=NULL){
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = NULL;
+    
+}
+
+Node* deletePos(Node* head, int k){
+    if(head==NULL){
+        return NULL;
+    }
+    if(k==1){
+        return deleteHead(head);
+    }
+    int cnt=0;
+    Node* temp=head, *prev=NULL;
+    while(temp!=NULL){
+        cnt++;
+        if(cnt==k){
+            prev->next=prev->next->next;
+            delete temp;
+            break;
+        }
+        prev=temp;
+        temp=temp->next;
+    }
+    return head;
 }
 int main(){
     Node* first = new Node(1);
@@ -36,7 +72,9 @@ int main(){
     third->next = fourth;
 
     printLL(first);
-    deleteHead(first);
+    // deleteHead(first);
+    //deleteTail(first);
+    first = deletePos(first,1);
     printLL(first);
 
 return 0;
