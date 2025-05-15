@@ -30,11 +30,17 @@ Node* deleteHead(Node* &head){
     return head;
 }
 Node* deleteTail(Node* head){
+    if(head==NULL)  return NULL;
+    if(head->next==NULL){
+        delete head;
+        return NULL;
+    }
     Node* temp = head;
     while(temp->next!=NULL){
         temp = temp->next;
     }
-    temp->back->next = NULL;
+    if(temp->back!=NULL)
+        temp->back->next = NULL;
     delete temp;
     return head;
 }
