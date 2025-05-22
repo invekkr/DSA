@@ -1,21 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
-void subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k){
+bool subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k){
     
     if(ind>=n){
        if(sum==k){
         for(auto it : l){
             cout<<it<<" ";
         }cout<<" = "<<sum<<endl;
+        return true;
     }
-    return;
+    return false;
     }    
     l.push_back(arr[ind]);
     sum+=arr[ind];
-    subSeqSum(ind+1, l,arr,n,sum,k);
+    if((subSeqSum(ind+1, l,arr,n,sum,k)) == true)   return true;
     l.pop_back();
     sum-=arr[ind];       
-    subSeqSum(ind+1, l,arr,n,sum,k);
+    if((subSeqSum(ind+1, l,arr,n,sum,k))==true) return true;
+
+    return false;
 }
 int main(){
     int arr[] = {2,5,3,2,2,3,5,1};

@@ -15,8 +15,8 @@ void subSeq(int ind, vector<int> &list, int arr[],int n){
     subSeq(ind+1, list,arr,n);
 }
 int main(){
-    int arr[] = {1,2};
-    int n = 2;
+    int arr[] = {5,3,4};
+    int n = 3;
     vector<int> list;
     subSeq(0,list,arr,n);
     cout<<"SubSequences printed";
