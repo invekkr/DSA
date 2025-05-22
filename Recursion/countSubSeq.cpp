@@ -1,34 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
-void subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k, int &c){
+int countSeqSum(int ind, vector<int> &li, int arr[],int n,int sum,int k, int &c){
     
     if(ind>=n){
        if(sum==k){
-        c++;
-        for(auto it : l){
-            cout<<it<<" ";
-        }cout<<" = "<<sum<<endl;
-        
+        return 1;     
     }
-    return ;
+    return 0;
     }    
-    l.push_back(arr[ind]);
+    li.push_back(arr[ind]);
     sum+=arr[ind];
-    subSeqSum(ind+1, l,arr,n,sum,k,c);
-    l.pop_back();
+    int l = countSeqSum(ind+1, li,arr,n,sum,k,c);
+    li.pop_back();
     sum-=arr[ind];       
-    subSeqSum(ind+1, l,arr,n,sum,k,c);
+    int r = countSeqSum(ind+1, li,arr,n,sum,k,c);   
 
-    
+    return l+r;
 }
 int main(){
     int arr[] = {2,1,1};
     int n = 3,sum=0,k=2,c=0;
-    vector<int> l;
-    subSeqSum(0,l,arr,n,sum,k,c);
+    vector<int> li;
+    int ans = countSeqSum(0,li,arr,n,sum,k,c);
     
-    cout<<"SubSequences Sum printed"<<endl;
-    cout<<c;
+    cout<<"Total SubSeq "<<ans<<endl;
     return 0;
 
 }
