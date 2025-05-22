@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int countSeqSum(int ind, vector<int> &li, int arr[],int n,int sum,int k){
+int countSeqSum(int ind, int arr[],int n,int sum,int k){
     
     if(ind>=n){
        if(sum==k){
@@ -8,21 +8,19 @@ int countSeqSum(int ind, vector<int> &li, int arr[],int n,int sum,int k){
     }
     return 0;
     }    
-    li.push_back(arr[ind]);
+    
     sum+=arr[ind];
-    int l = countSeqSum(ind+1, li,arr,n,sum,k);
-    li.pop_back();
+    int l = countSeqSum(ind+1,arr,n,sum,k);
+    
     sum-=arr[ind];       
-    int r = countSeqSum(ind+1, li,arr,n,sum,k);   
+    int r = countSeqSum(ind+1,arr,n,sum,k);   
 
     return l+r;
 }
 int main(){
     int arr[] = {2,1,1};
     int n = 3,sum=0,k=2;
-    vector<int> li;
-    int ans = countSeqSum(0,li,arr,n,sum,k);
-    
+    int ans = countSeqSum(0,arr,n,sum,k);  
     cout<<"Total SubSeq "<<ans<<endl;
     return 0;
 
