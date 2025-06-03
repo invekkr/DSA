@@ -38,8 +38,8 @@ void printVectorOfVector(const vector<vector<int>>& vec) {
 }
 int main()
 {
-    vector<int> a = {2, 3};
-    int target = 6;
+    vector<int> a = {2,1,3};
+    int target = 4;
     vector<vector<int>> ans;
     ans = combinationSum(a, target);
     printVectorOfVector(ans);
