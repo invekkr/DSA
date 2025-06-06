@@ -2,8 +2,8 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-class Solution {
-public:
+
+
     void subs(int a,vector<vector<int>> &ans,vector<int> &li, vector<int>& nums){        
         ans.push_back(li);
             
@@ -19,8 +19,23 @@ public:
         subs(0,ans,li,nums);
         return ans;
     }
-};
-int main(){
 
+void printVectorOfVector(const vector<vector<int>> &vec)
+{
+    for (const auto &inner : vec)
+    {
+        cout << "[ ";
+        for (int num : inner)
+        {
+            cout << num << " ";
+        }
+        cout << "]" << endl;
+    }
+}
+int main(){
+    vector<int> a = {2,1,3};
+    vector<vector<int>> ans;
+    ans = subsets(a);
+    printVectorOfVector(ans);
 return 0;
 }
