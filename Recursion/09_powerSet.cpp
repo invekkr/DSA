@@ -1,24 +1,25 @@
 // https://leetcode.com/problems/subsets/
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+void subs(int a, vector<vector<int>> &ans, vector<int> &li, vector<int> &nums)
+{
+    ans.push_back(li);
 
-
-    void subs(int a,vector<vector<int>> &ans,vector<int> &li, vector<int>& nums){        
-        ans.push_back(li);
-            
-        for(int i=a;i<nums.size();i++){
-            li.push_back(nums[i]);
-            subs(i+1,ans,li,nums);
-            li.pop_back();
-        }
+    for (int i = a; i < nums.size(); i++)
+    {
+        li.push_back(nums[i]);
+        subs(i + 1, ans, li, nums);
+        li.pop_back();
     }
-    vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> ans;
-        vector<int> li;
-        subs(0,ans,li,nums);
-        return ans;
-    }
+}
+vector<vector<int>> subsets(vector<int> &nums)
+{
+    vector<vector<int>> ans;
+    vector<int> li;
+    subs(0, ans, li, nums);
+    return ans;
+}
 
 void printVectorOfVector(const vector<vector<int>> &vec)
 {
@@ -32,10 +33,11 @@ void printVectorOfVector(const vector<vector<int>> &vec)
         cout << "]" << endl;
     }
 }
-int main(){
-    vector<int> a = {2,1,3};
+int main()
+{
+    vector<int> a = {2, 1, 3};
     vector<vector<int>> ans;
     ans = subsets(a);
     printVectorOfVector(ans);
-return 0;
+    return 0;
 }

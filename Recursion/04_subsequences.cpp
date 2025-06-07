@@ -14,6 +14,7 @@ void subSeq(int ind, vector<int> &list, int arr[],int n){
     list.pop_back();
     subSeq(ind+1, list,arr,n);
 }
+
 int main(){
     int arr[] = {1,2,3};
     int n = 3;

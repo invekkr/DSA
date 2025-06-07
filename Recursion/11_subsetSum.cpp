@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/problems/subset-sums2234/1&selectedLang=python3
 #include<bits/stdc++.h>
 using namespace std;
 void sums(int ind, vector<int>&ans, vector<int>&arr,int sum){

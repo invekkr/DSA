@@ -9,7 +9,7 @@ int removeDuplicates(vector<int>& nums) {
             if(nums[i]==nums[j]){
                 j++;
             }
-            else if(nums[i]!=nums[j]){
+            else{
                 nums[i+1]=nums[j];
                 i++;
                 j++;
@@ -18,7 +18,7 @@ int removeDuplicates(vector<int>& nums) {
         return i+1;
     }
 int main(){
-    vector<int> arr = {1,2,2,3,3,4};
+    vector<int> arr = {0,0,1,2,2};
     for(auto it:arr){
         cout<<it<<" ";
     }
