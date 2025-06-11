@@ -2,7 +2,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 void subsets(int ind,vector<vector<int>> &ans, vector<int>&li,vector<int>& nums){
-        ans.push_back(li);
+    for(auto it =li.begin() ; it<li.end();it++){
+            cout<<*it<<" ";
+        }
+        cout<<endl;    
+    ans.push_back(li);
         for(int i=ind;i<nums.size();i++){
             if(i!=ind && nums[i]==nums[i-1]) continue;
             li.push_back(nums[i]);
@@ -31,7 +35,7 @@ void subsets(int ind,vector<vector<int>> &ans, vector<int>&li,vector<int>& nums)
     }
 }
 int main(){
-    vector<int> nums = {2,1,2};
+    vector<int> nums = {3,2};
     for(auto it =nums.begin() ; it<nums.end();it++){
             cout<<*it<<" ";
         }
@@ -39,5 +43,7 @@ int main(){
     
         vector<vector<int>> ans = subsetsWithDup(nums);
         printVectorOfVector(ans);
+
+        
 return 0;
 }
