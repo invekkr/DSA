@@ -43,23 +43,14 @@ void printLL(Node *head)
 }
 
 // Reverse linked list
-Node *reverse(Node *head)
-{
+Node* reverse(Node* head) {
     if (head == NULL || head->next == NULL)
         return head;
 
-    Node *temp = head;
-    Node *prev = NULL;
-    Node *front = NULL;
-
-    while (temp != NULL)
-    {
-        front = temp->next;
-        temp->next = prev;
-        prev = temp;
-        temp = front;
-    }
-    return prev;
+    Node* newHead = reverse(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return newHead;
 }
 
 int main()
