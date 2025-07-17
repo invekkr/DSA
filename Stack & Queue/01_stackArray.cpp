@@ -68,5 +68,8 @@ int main(){
     st.printStack();
     cout<<"Top element is "<<t<<endl;
 
+    bool et = st.isEmpty();
+    cout<<"Is stack empty "<<et<<endl;
+
 return 0;
 }
