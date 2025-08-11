@@ -62,14 +62,10 @@ class Stack{
 
 int main(){
     Stack st;
-    st.push(11);
-    st.push(22);
-    st.push(33);
-    st.push(44);
-
-    st.display();
+    st.push(10);
+    st.push(20);
+    st.push(30);
     st.pop();
-    st.getTop();
     st.display();
 return 0;
 }
