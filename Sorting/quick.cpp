@@ -19,15 +19,12 @@ int partition(vector<int> &arr, int low, int high){
     swap(arr[low],arr[j]);
     return j;
 }
-void qs(vector<int> &arr,int low, int high){
+void quick(vector<int> &arr,int low, int high){
     if(low<high){
         int pIndex = partition(arr,low,high);
-        qs(arr,low,pIndex-1);
-        qs(arr,pIndex+1,high);
+        quick(arr,low,pIndex-1);
+        quick(arr,pIndex+1,high);
     }
-}
-void quick(vector<int> &arr){
-    qs(arr,0,arr.size()-1);
 }
 int main(){
     vector<int> arr = {8,6,3,1,4,5,7};
@@ -37,7 +34,7 @@ int main(){
     }
     cout<<endl;
 
-    quick(arr);
+    quick(arr,0,n-1);
     cout<<endl;
 
     for(int i=0;i<n;i++){
