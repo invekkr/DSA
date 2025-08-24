@@ -29,6 +29,33 @@ class Queue{
             rear = newNode;
             
         }
+
+        void dequeue(){
+            if(front==NULL){
+                cout<<"Queue is empty<<\n";
+            }
+            Node *temp = front;
+            front  = front->next;
+
+            // if(front==NULL){
+
+            // }
+            delete temp;
+        }
+
+        int getFirst(){
+            if(front==NULL){
+                cout<<"Queue is empty";
+                return -1;
+            }
+            return front->data;
+        }
+
+        bool isEmpty(){
+            return (front==NULL);
+        }
+
+        
 };
 int main(){
     

@@ -25,9 +25,6 @@ void count(vector<int> &arr){
         countArray[num]--;
     }
     arr = temp;
-
-
-
 }
 int main(){ 
     vector<int> arr = {8,6,3,1,4,5,7};
