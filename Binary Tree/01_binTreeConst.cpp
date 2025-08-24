@@ -30,6 +30,24 @@ Node* buildTree(Node* root){
 
 }
 
+void levelOrder(Node* head){
+    if(head==NULL)  return;
+    queue<Node*> q;
+    q.push(head);
+
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+        cout<<temp->data<<" ";
+        if(temp->left!=NULL){
+            q.push(temp->left);
+        }
+        if(temp->right!=NULL){
+            q.push(temp->right);
+        }
+    }
+}
+
 void inOrder(Node* head){
     if(head == NULL)    return;
     inOrder(head->left);
@@ -53,6 +71,8 @@ int main(){
 
     Node* root = NULL;
     root = buildTree(root);
+    levelOrder(root);
+    cout<<endl;
     inOrder(root);
     cout<<endl;
     preOrder(root);
