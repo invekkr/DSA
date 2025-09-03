@@ -38,7 +38,7 @@ Node* rightRotate(Node* y) {
     Node* x = y->left;
     Node* T2 = x->right;
 
-    // Perform rotation
+    //rotation
     x->right = y;
     y->left = T2;
 
@@ -54,7 +54,7 @@ Node* leftRotate(Node* x) {
     Node* y = x->right;
     Node* T2 = y->left;
 
-    // Perform rotation
+    //rotation
     y->left = x;
     x->right = T2;
 
