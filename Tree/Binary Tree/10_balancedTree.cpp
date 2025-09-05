@@ -20,21 +20,20 @@ class Solution {
     int height(Node* root){
         if(root==NULL)  return 0;
         int l = height(root->left);
+        if(l==-1)   return -1;
         int r = height(root->right);
+        if(r==-1)   return -1;
+        
+        if(abs(l-r)>1) { 
+            
+            return -1;
+        };  
         
         return 1+max(l,r);
     }
     bool isBalanced(Node* root) {
         // Code here
-        if(root==NULL)  return true;
-        int lh = height(root->left);
-        int rh = height(root->right);
-        
-        if(abs(lh-rh)>1)    return false;
-        
-        if(!isBalanced(root->left)||!isBalanced(root->right))  return false;
-        
-        return true;
+        return height(root)!=-1;
         
     }
 };
