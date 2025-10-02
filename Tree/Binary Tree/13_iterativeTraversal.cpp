@@ -13,19 +13,24 @@ struct TreeNode
 class Solution
 {
 public:
-vector<int> postorderTraversal(TreeNode* root) {
-        stack <TreeNode*> st;
-        vector<int>ans;
-        if(root==NULL)  return ans;
+    vector<int> postorderTraversal(TreeNode *root)
+    {
+        stack<TreeNode *> st;
+        vector<int> ans;
+        if (root == NULL)
+            return ans;
         st.push(root);
-        while(!st.empty()){
-            TreeNode* temp = st.top();
+        while (!st.empty())
+        {
+            TreeNode *temp = st.top();
             ans.push_back(temp->val);
             st.pop();
-            if(temp->left) st.push(temp->left);
-            if(temp->right) st.push(temp->right);
+            if (temp->left)
+                st.push(temp->left);
+            if (temp->right)
+                st.push(temp->right);
         }
-        reverse(ans.begin(),ans.end());
+        reverse(ans.begin(), ans.end());
         return ans;
     }
     vector<int> preorderTraversal(TreeNode *root)
