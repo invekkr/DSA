@@ -18,8 +18,8 @@ void subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k){
     subSeqSum(ind+1, l,arr,n,sum,k);
 }
 int main(){
-    int arr[] = {2,5,3,2,2,3,5,1};
-    int n = 8,sum=0,k=8;
+    int arr[] = {1,2,1};
+    int n = 3,sum=0,k=2;
     vector<int> l;
     subSeqSum(0,l,arr,n,sum,k);
     cout<<"SubSequences Sum printed";
