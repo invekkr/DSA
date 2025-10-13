@@ -1,3 +1,4 @@
+// subsequences with sum K
 #include<bits/stdc++.h>
 using namespace std;
 void subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k){
