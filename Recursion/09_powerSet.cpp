@@ -35,7 +35,7 @@ void printVectorOfVector(const vector<vector<int>> &vec)
 }
 int main()
 {
-    vector<int> a = {2, 1, 3};
+    vector<int> a = {1, 1, 2, 1, 2};
     vector<vector<int>> ans;
     ans = subsets(a);
     printVectorOfVector(ans);

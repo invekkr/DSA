@@ -18,12 +18,12 @@ void sums(int ind, vector<int>&ans, vector<int>&arr,int sum){
         
     }
 int main(){
-    vector<int> arr = {2,3};
+    vector<int> arr = {1,2,3};
     
     arr = subsetSums(arr);
     for(auto it =arr.begin() ; it<arr.end();it++){
             cout<<*it<<" ";
         }
-    return 0;
+    
 return 0;
 }

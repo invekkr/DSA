@@ -2,16 +2,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void combination(int i, vector<int> li, vector<vector<int>> &ans, vector<int> &arr, int t)
+void combination(int i, vector<int> &li, vector<vector<int>> &ans, vector<int> &arr, int t)
 {
-    if (i == arr.size())
-    {
-        if (t == 0)
-        {
-            ans.push_back(li);
-        }
-        return;
+    // If target becomes 0, we found a valid combination
+    if (t == 0) {
+        ans.push_back(li);
+        return;  // ✅ Stop exploring further
     }
+
+    if (i == arr.size()) return;
     if (arr[i] <= t)
     {
         li.push_back(arr[i]);
@@ -38,8 +37,8 @@ void printVectorOfVector(const vector<vector<int>>& vec) {
 }
 int main()
 {
-    vector<int> a = {2,1,3};
-    int target = 4;
+    vector<int> a = {1,2};
+    int target = 2;
     vector<vector<int>> ans;
     ans = combinationSum(a, target);
     printVectorOfVector(ans);
