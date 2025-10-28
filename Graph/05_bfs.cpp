@@ -29,7 +29,7 @@ int main(){
 
     for(int i=0;i<e;i++){
         int u,v;
-        cout<<"Enter node values (u->v) "<<endl;
+        cout<<"Enter node values (u-v) "<<endl;
         cin>>u>>v;
 
         adj[u].push_back(v);
