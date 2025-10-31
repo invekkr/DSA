@@ -5,9 +5,9 @@ vector<vector<int>> convertToAdjList(vector<vector<int>> &adjMat) {
     int V = adjMat.size();              // Number of vertices
     vector<vector<int>> adjList(V);     // Create adjacency list
 
-    for (int i = 0; i < V; i++) {
-        for (int j = 0; j < V; j++) {
-            if (adjMat[i][j] == 1) {    // Edge exists
+    for(int i=0;i<V;i++){
+        for(int j=0;j<V;j++){
+            if(adjMat[i][j]==1){
                 adjList[i].push_back(j);
             }
         }
