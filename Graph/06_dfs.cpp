@@ -9,7 +9,7 @@ void dfs(int node, vector<int> adj[], vector<int>vis){
             dfs(ngh,adj,vis);
         }
     }
-
+    
 }
 int main(){
     int n,e;
