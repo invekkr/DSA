@@ -21,8 +21,8 @@ public:
 };
 
 int main() {
-    vector<int> arr = {10, 2, -2, -20, 10}; 
-    int K = -10;                          
+    vector<int> arr = {10, 2, 1, 1, 1, 1, 1, 10}; 
+    int K = 4;                          
 
     Solution obj;
     vector<int> result = obj.subarraySum(arr, K);
