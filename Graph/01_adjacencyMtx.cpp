@@ -5,7 +5,7 @@ int main(){
     cout<<"Enter number of Nodes and Edges"<<endl;
     int nodes, edges;
     cin>>nodes>>edges;
-    int adj[nodes+1][nodes+1] = {0};
+    vector<vector<int>> adj(nodes+1, vector<int>(nodes+1, 0));
     // Now will loop till the number of edges
     for(int i=1;i<=edges;i++){
         int u,v;
