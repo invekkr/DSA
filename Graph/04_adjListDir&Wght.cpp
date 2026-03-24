@@ -18,7 +18,7 @@ int main(){
     for (int i = 1; i <= nodes; i++) {
         cout << i << " -> ";
         for (auto it : adj[i]) {
-            cout << it.first << ", wt : "<<it.second<<" ";
+            cout << it.first << "{ wt : "<<it.second<<" } ";
         }
         cout << endl;
     }

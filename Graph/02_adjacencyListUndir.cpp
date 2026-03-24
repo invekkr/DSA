@@ -10,7 +10,7 @@ int main() {
     vector<int> adj[nodes + 1]; // 1-based indexing
 
     // Input edges for directed graph
-    for (int i = 0; i < edges; i++) { 
+    for (int i = 1; i <= edges; i++) { 
         int u, v;
         cout << "Enter edge (u v): ";
         cin >> u >> v;

@@ -16,7 +16,7 @@ vector<vector<int>> convertToAdjList(vector<vector<int>> &adjMat) {
 }
 
 int main() {
-    // Example: adjacency matrix for undirected graph
+    // adjacency matrix for undirected graph
     vector<vector<int>> adjMat = {
         {0, 1, 1, 0},
         {1, 0, 1, 1},

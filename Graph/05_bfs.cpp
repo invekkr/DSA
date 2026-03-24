@@ -10,7 +10,7 @@ void bfs(int start, vector<int> adj[], vector<int> &vis ){
         q.pop();
 
         cout<<temp<<" ";
-
+ 
         // traversing adjcaent node
         for(auto ngh : adj[temp]){
             if(!vis[ngh]){      // checking if that neighbor has already been traversed
