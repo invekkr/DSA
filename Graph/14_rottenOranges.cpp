@@ -19,7 +19,6 @@ public:
                     fresh++;
             }
         }
-
         // MultiSource BFS to rot oranges
 
         int time = 0;
