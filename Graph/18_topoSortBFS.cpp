@@ -2,8 +2,7 @@
 using namespace std;
 class Solution {
   public:
-    vector<int> topoSort(int V, vector<vector<int>>& edges) {
-        
+    vector<int> topoSort(int V, vector<vector<int>>& edges) {       
         vector<vector<int>> list(V);
         
         for(auto &e:edges){
@@ -21,8 +20,7 @@ class Solution {
             for(auto it : list[i]){
                 indegree[it]++;
             }
-        }
-        
+        }       
         vector<int> ans;
         
         // will push all the 0 indegree nodes in queue as they will appear first
