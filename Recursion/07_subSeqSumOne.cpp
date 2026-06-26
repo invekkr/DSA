@@ -6,7 +6,7 @@ bool subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k){
        if(sum==k){
         for(auto it : l){
             cout<<it<<" ";
-        }cout<<" = "<<sum<<endl;
+        }cout<<" = "<<sum<<endl; 
         return true;
     }
     return false;

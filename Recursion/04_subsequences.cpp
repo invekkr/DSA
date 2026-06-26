@@ -17,7 +17,7 @@ void subSeq(int start, vector<int> &list, int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {1, 2, 2};
+    int arr[] = {10,20,30};
     int n = 3;
     vector<int> list;
     subSeq(0, list, arr, n);

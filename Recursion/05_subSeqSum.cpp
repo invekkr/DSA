@@ -3,7 +3,7 @@
 using namespace std;
 void subSeqSum(int ind, vector<int> &l, int arr[],int n,int sum,int k){
     
-    if(ind>=n){
+    if(ind==n){
        if(sum==k){
         for(auto it : l){
             cout<<it<<" ";
