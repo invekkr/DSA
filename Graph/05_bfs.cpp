@@ -44,7 +44,7 @@ int main(){
             cout<<endl;
     }
     vector<int> visited(n+1,0);
-    bfs(3,adj,visited);
+    bfs(1,adj,visited);
 
 
 return 0;

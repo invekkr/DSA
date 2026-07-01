@@ -56,6 +56,7 @@ int main()
             if (grid[i][j] == 1 && !vis[i][j])
             {
                 bfs(i, j, grid, vis);
+                cout<<endl;
             }
         }
     }
