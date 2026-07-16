@@ -5,24 +5,35 @@ public:
     vector<int> subarraySum(vector<int>& arr, int k) {
         int n = arr.size();
         
-        for(int i=0;i<n;i++){
-            int sum = 0;
-            for(int j=i;j<n;j++){
-                sum+=arr[j];
+        int l=0,r=0,sum=0;
+        int maxLen = 0;
+        int s=-1,e=-1;
+        for(int r=0;r<n;r++){
+            sum+=arr[r];
 
-                if(sum==k){
-                    return {i,j};
+            while(l<=r && sum>k){
+                sum-=arr[l];
+                l++;
+            }
+            if(sum==k){
+                if(r-l+1 > maxLen){
+                    s = l;
+                    e = r;
+                    maxLen = r-l+1;
                 }
             }
+        
+
         }
-        return {-1,-1};
+        
+        return {s,e};
         
     }
 };
 
 int main() {
-    vector<int> arr = {10, 2, 1, 1, 1, 1, 1, 10}; 
-    int K = 4;                          
+    vector<int> arr = {2,5,1,6,8,3,4,7}; 
+    int K = 15;                          
 
     Solution obj;
     vector<int> result = obj.subarraySum(arr, K);
