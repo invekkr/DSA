@@ -39,8 +39,8 @@ Node* deleteTail(Node* head){
     while(temp->next!=NULL){
         temp = temp->next;
     }
-    if(temp->back!=NULL)
-        temp->back->next = NULL;
+    
+    temp->back->next = NULL;
     delete temp;
     return head;
 }

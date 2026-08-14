@@ -15,7 +15,7 @@ Node* arrToLL(vector <int> arr){
     Node* move = head;
 
     for(int i=1;i<arr.size();i++){
-        Node* temp = new Node(arr[i]);
+        Node* temp = new Node(arr[i]); 
         move->next = temp;
         move = temp;
     }

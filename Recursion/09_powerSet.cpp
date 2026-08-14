@@ -2,11 +2,11 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-void subs(int a, vector<vector<int>> &ans, vector<int> &li, vector<int> &nums)
+void subs(int ind, vector<vector<int>> &ans, vector<int> &li, vector<int> &nums)
 {
     ans.push_back(li);
 
-    for (int i = a; i < nums.size(); i++)
+    for (int i = ind; i < nums.size(); i++)
     {
         li.push_back(nums[i]);
         subs(i + 1, ans, li, nums);
