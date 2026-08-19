@@ -29,6 +29,7 @@ class Queue{
     void dequeue(){
         if(isEmpty()){
             cout<<"Queue empty"<<endl;
+            return;
         }
         front = (front+1)%size;
         count--;
