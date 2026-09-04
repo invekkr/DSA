@@ -2,6 +2,31 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+class Solution {
+public:
+    void helper(int idx, vector<int> &nums, vector<int> &list,vector<vector<int>> &ans){
+        if(idx==nums.size()){
+            ans.push_back(list);
+            return;
+        }
+
+        //take the element at idx
+        list.push_back(nums[idx]);
+        helper(idx+1,nums,list,ans);
+
+        // backtrack : i.e, remove the element last added to make it empty at that position
+        list.pop_back();
+
+        // not take the element at that postion
+        helper(idx+1,nums,list,ans);
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> list;
+        helper(0,nums,list,ans);
+        return ans;
+    }
+};
 void subs(int ind, vector<vector<int>> &ans, vector<int> &li, vector<int> &nums)
 {
     ans.push_back(li);
@@ -35,7 +60,7 @@ void printVectorOfVector(const vector<vector<int>> &vec)
 }
 int main()
 {
-    vector<int> a = {1, 1, 2};
+    vector<int> a = {1, 2, 3};
     vector<vector<int>> ans;
     ans = subsets(a);
     printVectorOfVector(ans);
