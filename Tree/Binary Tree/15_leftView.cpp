@@ -14,7 +14,27 @@ public:
         right = nullptr;
     }
 };
-class Solution {
+class dfsSolution {
+  public:
+    void solve(Node* node, int level, vector<int> &ans){
+        if(node==NULL)
+            return;
+            
+        if(level==ans.size())
+            ans.push_back(node->data);
+        
+        solve(node->left,level+1,ans);
+        solve(node->right,level+1,ans);
+    }
+    vector<int> leftView(Node *root) {
+        vector<int> ans;
+        int level = 0;
+        solve(root,level,ans);
+        return ans;
+        
+    }
+};
+class bfsSolution {
   public:
     vector<int> leftView(Node *root) {
         // code here

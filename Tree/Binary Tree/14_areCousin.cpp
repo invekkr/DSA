@@ -13,7 +13,58 @@ struct Node
         left = right = NULL;
     }
 };
+class Solution {
+public:
+    bool areCousins(Node* root, int a, int b) {
+        if (root == NULL || a==b)
+            return false;
 
+        queue<Node*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            int n = q.size();
+            bool foundA = false;
+            bool foundB = false;
+
+            for (int i = 0; i < n; i++) {
+
+                Node* node = q.front();
+                q.pop();
+
+                // If a and b are siblings
+                if (node->left && node->right) {
+                    if ((node->left->data == a && node->right->data == b) ||
+                        (node->left->data == b && node->right->data == a)) {
+                        return false;
+                    }
+                }
+
+                if (node->data == a)
+                    foundA = true;
+
+                if (node->data == b)
+                    foundB = true;
+
+                if (node->left)
+                    q.push(node->left);
+
+                if (node->right)
+                    q.push(node->right);
+            }
+
+            // Both are present at this level
+            if (foundA && foundB)
+                return true;
+
+            // One is present but the other isn't
+            if (foundA || foundB)
+                return false;
+        }
+
+        return false;
+    }
+};
 class Solution
 {
 public:
