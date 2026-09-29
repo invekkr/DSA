@@ -9,7 +9,7 @@ class Solution {
         vector<vector<int>> list(V);
         for(auto &e : edges){
             int u = e[0];
-            int v = e[1];
+            int v = e[1]; 
             
             list[u].push_back(v);
             list[v].push_back(u);
